@@ -1,38 +1,35 @@
 <script>
+  import Typewriter from 'svelte-typewriter'
+  import { fade } from 'svelte/transition';
+  import ShareSheet from './ShareSheet.svelte';
+  import Modal from "./Modal.svelte";
+                                        
+  import tasks from '../tasks.json';
+  import contexts from '../contexts.json';
+  import audiences from '../audiences.json';
 
-   import Typewriter from 'svelte-typewriter'
-   import { fade } from 'svelte/transition';
-
-  let tasks = [
-  { id: 1, title: 'Design a', status: false},
-  { id: 2, title: 'Create a', status: false },
-  { id: 3, title: 'Prototype a', status: false },
-  { id: 4, title: 'Sketch a', status: false },
-  ];
-
-  let contexts = [
-  { id: 1, title: 'Robot for', status: false},
-  { id: 2, title: 'Playstation for', status: false },
-  { id: 3, title: 'Website for', status: false },
-  { id: 4, title: 'Mobile app for', status: false },
-  ];
-
-    let audiences = [
-  { id: 1, title: 'Aliens', status: false},
-  { id: 2, title: 'Your mother', status: false },
-  { id: 3, title: 'For the elderly', status: false },
-  { id: 4, title: 'Hamsters with long hair', status: false },
-  ];
+  let taskNumLocked = false;
+  let contextsNumLocked = false;
+  let audiencesNumLocked = false;
+  let showModal = false;
 
   let tasksNum = 1;
   let contextsNum = 1;
   let audiencesNum = 1;
   let tokens = 2;
-  let taskNumLocked = false;
-  let contextsNumLocked = false;
-  let audiencesNumLocked = false;
+  let challenges = [];
 
-  function spinTheWheel() {
+  const share = () => {
+
+    showModal = true;
+    challenges = [
+      { title: tasks[tasksNum].title },
+      { title: contexts[contextsNum].title },
+      { title: audiences[audiencesNum].title }
+    ];
+  }
+  
+  const spinTheWheel = () => {
     if (taskNumLocked === false) {
       tasksNum = Math.floor(Math.random() * tasks.length);
     }
@@ -71,6 +68,7 @@
   }
 
 </script>
+
 <h1>Tokens:
 	{#each [tokens] as c (c)}
 	<strong in:fade>{c}</strong> 
@@ -106,5 +104,19 @@
 {/if}
 
 
-
 <button on:click={spinTheWheel} class="is-primary">Spin the wheel</button>
+<button on:click={share} class="is-primary">Share results</button>
+
+
+{#if showModal}
+	<Modal on:close="{() => showModal = false}">
+		<h2 slot="header">
+			Share
+			<small><em>adjective</em>  mod·al \ˈmō-dəl\</small>
+		</h2>
+	  <ShareSheet {challenges} />
+	</Modal>
+{/if}
+
+
+
