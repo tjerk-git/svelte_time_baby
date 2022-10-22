@@ -103,9 +103,8 @@
     <h1>{audiences[audiencesNum].title}</h1> 
 {/if}
 
-
 <button on:click={spinTheWheel} class="is-primary">Spin the wheel</button>
-<button on:click={share} class="is-primary">Share results</button>
+<button on:click={share} class="is-primary">Save results</button>
 
 
 {#if showModal}
