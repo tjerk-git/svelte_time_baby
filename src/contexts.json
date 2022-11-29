@@ -1,6 +1,30 @@
 [
-  { "id": 1, "title": "Robot for" },
-  { "id": 2, "title": "Playstation for" },
-  { "id": 3, "title": "Website for" },
-  { "id": 4, "title": "Mobile app for" }
+  {
+    "id": 1,
+    "title": "Robot for"
+  },
+  {
+    "id": 2,
+    "title": "Playstation for"
+  },
+  {
+    "id": 3,
+    "title": "Website for"
+  },
+  {
+    "id": 4,
+    "title": "Mobile app for"
+  },
+  {
+    "id": 5,
+    "title": "Membership card for"
+  },
+  {
+    "id": 6,
+    "title": "Waterbottle for"
+  },
+  {
+    "id": 7,
+    "title": "Album cover for"
+  }
 ]

@@ -1,6 +1,26 @@
 [
-  { "id": 1, "title": "Design a" },
-  { "id": 2, "title": "Create a" },
-  { "id": 3, "title": "Prototype a" },
-  { "id": 4, "title": "Sketch a" }
+  {
+    "id": 1,
+    "title": "Design a"
+  },
+  {
+    "id": 2,
+    "title": "Create a"
+  },
+  {
+    "id": 3,
+    "title": "Prototype a"
+  },
+  {
+    "id": 4,
+    "title": "Sketch a"
+  },
+  {
+    "id": 5,
+    "title": "Clay a"
+  },
+  {
+    "id": 6,
+    "title": "Paint a"
+  }
 ]
