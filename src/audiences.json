@@ -9,11 +9,11 @@
   },
   {
     "id": 3,
-    "title": "Hamsters with long hair"
+    "title": "a Dog"
   },
   {
     "id": 4,
-    "title": "Elderly"
+    "title": "a to year old"
   },
   {
     "id": 5,
@@ -26,5 +26,9 @@
   {
     "id": 7,
     "title": "People with three arms"
+  },
+  {
+    "id": 8,
+    "title": "Elderly"
   }
 ]
